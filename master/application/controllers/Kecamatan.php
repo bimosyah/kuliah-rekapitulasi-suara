@@ -15,7 +15,7 @@ class Kecamatan extends CI_Controller {
 	{
 		$data['title'] = $this->title;
 		$data['kecamatan'] = $this->mKecamatan->getAll();
-		$this->load->view('Kecamatan/index',$data);
+		$this->load->view('kecamatan/index',$data);
 	}
 
 	public function insert()

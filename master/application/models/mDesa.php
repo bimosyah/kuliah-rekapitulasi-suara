@@ -13,6 +13,12 @@ class MDesa extends CI_Model {
 		}
 	}	
 
+	public function getDesa($id){
+		$this->db->where('fk_id_kecamatan', $id);
+		$this->db->order_by('nama_desa', 'asc');
+		return $this->db->get('desa')->result();
+	}
+
 	public function getJoin()
 	{
 		$this->db->select('desa.id,nama_desa, kecamatan.nama_kecamatan');

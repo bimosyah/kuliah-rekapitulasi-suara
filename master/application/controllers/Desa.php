@@ -76,6 +76,15 @@ class Desa extends CI_Controller {
 		$pesan = '<div class="sufee-alert alert with-close alert-'.$jenis.' alert-dismissible fade show"><span class="badge badge-pill badge-primary">Success</span> '.$isi.'.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 		return $pesan;
 	}
+
+	function getDesa()
+	{
+		$id_kecamatan = $this->input->post('id_kecamatan');
+		$desa = $this->mDesa->getDesa($id_kecamatan);
+		foreach ($desa as $value) {
+			echo '<option value = "'.$value->id.'">'.$value->nama_desa.'</option>';
+		}
+	}
 }
 
 /* End of file Desa.php */

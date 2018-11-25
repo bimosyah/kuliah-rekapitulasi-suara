@@ -1,33 +1,78 @@
 <?php $this->load->view('header'); ?>
 <div id="right-panel" class="right-panel">
-	<header id="header" class="header">
-
-		<div class="header-menu">
-
-			<div class="col-sm-7">
-				<a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-				<div class="header-left">
-					<div class="page-title">
-						<h3>Dashboard</h3>
+	<?php $this->load->view('top-panel'); ?>
+	
+	<div class="content mt-3">
+		<div class="animated fadeIn">
+			<div class="col-lg-3 col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="stat-widget-one">
+							<div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+							<div class="stat-content dib">
+								<div class="stat-text">Calon</div>
+								<div class="stat-digit"><?php echo $calon ?></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-5">
-				<div class="user-area dropdown float-right">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-					</a>
-					<div class="user-menu dropdown-menu">
-						<a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-						<a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-						<a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-						<a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+			<div class="col-lg-3 col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="stat-widget-one">
+							<div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+							<div class="stat-content dib">
+								<div class="stat-text">Kecamatan</div>
+								<div class="stat-digit"><?php echo $kecamatan ?></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-	</header><!-- /header -->
-
+			<div class="col-lg-3 col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="stat-widget-one">
+							<div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+							<div class="stat-content dib">
+								<div class="stat-text">Kelurahan</div>
+								<div class="stat-digit"><?php echo $desa ?></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="stat-widget-one">
+							<div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+							<div class="stat-content dib">
+								<div class="stat-text">TPS</div>
+								<div class="stat-digit"><?php echo $tps ?></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div class="stat-widget-one">
+							<div class="stat-icon dib"><i class="ti-user text-success border-success"></i></div>
+							<div class="stat-content dib">
+								<div class="stat-text">Petugas</div>
+								<div class="stat-digit"><?php echo $petugas ?></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
 </div>
+
 <?php $this->load->view('footer'); ?>
+
+

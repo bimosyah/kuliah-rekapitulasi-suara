@@ -6,7 +6,10 @@
   <meta name="description" content="Sufee Admin - HTML5 Admin Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <script src="<?php echo base_url('assets/js/vendor/jquery-2.1.4.min.js') ?>"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 
   <link rel="stylesheet" href="<?php echo base_url('assets/css/normalize.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
@@ -16,8 +19,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/cs-skin-elastic.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/scss/style.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/lib/vector-map/jqvmap.min.css') ?>">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.css"/>
-  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script> 
+
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -42,11 +44,11 @@
 
           <li class="<?php if($this->uri->segment(1) == 'Calon') echo 'active' ?>"><a href="<?php echo site_url('Calon') ?>"><i class="menu-icon fa fa-users"></i>Data Calon</a></li>
 
-          <li class="<?php if($this->uri->segment(1) == 'Jenis') echo 'active' ?>"><a href="<?php echo site_url('Jenis') ?>"><i class="menu-icon fa fa-columns"></i>Data Jenis Pemilu</a></li>
+         <!--  <li class="<?php if($this->uri->segment(1) == 'Jenis') echo 'active' ?>"><a href="<?php echo site_url('Jenis') ?>"><i class="menu-icon fa fa-columns"></i>Data Jenis Pemilu</a></li> -->
 
           <li class="<?php if($this->uri->segment(1) == 'Kecamatan') echo 'active' ?>"><a href="<?php echo site_url('Kecamatan') ?>"> <i class="menu-icon fa fa-list-alt"></i>Data Kecamatan</a></li>
 
-          <li class="<?php if($this->uri->segment(1) == 'Desa') echo 'active' ?>"><a href="<?php echo site_url('Desa') ?>"> <i class="menu-icon fa fa-align-justify"></i>Data Desa</a></li>
+          <li class="<?php if($this->uri->segment(1) == 'Desa') echo 'active' ?>"><a href="<?php echo site_url('Desa') ?>"> <i class="menu-icon fa fa-align-justify"></i>Data Kelurahan</a></li>
 
           <li class="<?php if($this->uri->segment(1) == 'TPS') echo 'active' ?>"><a href="<?php echo site_url('TPS') ?>"> <i class="menu-icon fa fa-list-ul"></i>Data TPS</a></li>
 

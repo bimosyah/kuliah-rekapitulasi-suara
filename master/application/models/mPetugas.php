@@ -15,9 +15,10 @@ class MPetugas extends CI_Model {
 
 	public function getJoin()
 	{
-		$this->db->select('petugas.id,nama_petugas, desa.nama_desa,status_login');
+		$this->db->select('petugas.id,nama_petugas, desa.nama_desa,status_login,kecamatan.nama_kecamatan');
 		$this->db->from('petugas');
 		$this->db->join('desa', 'petugas.fk_id_desa = desa.id');
+		$this->db->join('kecamatan', 'kecamatan.id = desa.fk_id_kecamatan', 'left');
 		return $this->db->get()->result();
 	}
 

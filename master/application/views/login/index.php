@@ -12,9 +12,11 @@
 							<strong>Data</strong><small> Petugas</small>
 						</div>
 						<div class="card-body">
-							<table class="table table-striped" id="table">
+							<table class="table table-striped" id="example">
 								<thead>
 									<tr>
+										<td>Kecamatan</td>
+										<td>Kelurahan</td>
 										<td>Nama Petugas</td>
 										<td>Username</td>
 										<td>Password</td>
@@ -23,6 +25,8 @@
 								<tbody>
 									<?php foreach ($login as $value): ?>
 										<tr>
+											<td><?php echo $value->nama_kecamatan ?></td>
+											<td><?php echo $value->nama_desa ?></td>
 											<td><?php echo $value->nama_petugas ?></td>
 											<td><?php echo $value->username ?></td>
 											<td><?php echo $value->password ?></td>
@@ -37,4 +41,10 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#example').DataTable();
+	});
+</script>
 <?php $this->load->view('footer'); ?>
+

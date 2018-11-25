@@ -1,4 +1,4 @@
-<?php $this->load->view('header'); ?>
+ <?php $this->load->view('header'); ?>
 <div id="right-panel" class="right-panel">
 	<?php $this->load->view('top-panel'); ?>
 	
@@ -42,7 +42,6 @@
 											<td><?php echo $value->nama_kecamatan ?></td>
 											<td>
 												<a href="<?php echo site_url('Kecamatan/edit/'.$value->id) ?>" class="btn btn-link"><i class="fa fa-pencil"></i>&nbsp; Edit</a>
-												<a href="<?php echo site_url('Kecamatan/delete/'.$value->id) ?>" class="btn btn-link"><i class="fa fa-minus-circle"></i>&nbsp; Hapus</a>
 											</td>
 										</tr>
 									<?php endforeach ?>

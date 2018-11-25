@@ -22,7 +22,7 @@
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="nama_desa" class="control-label mb-1">Nama Desa</label>
+								<label for="nama_desa" class="control-label mb-1">Nama Kelurahan</label>
 								<input id="nama_desa" id="nama_desa" name="nama_desa" type="text" class="form-control">
 							</div>
 							<button type="Submit" id="btn-submit" class="btn btn-primary"><i class="fa fa-cloud-upload"></i>&nbsp; Submit</button>
@@ -30,20 +30,19 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="col-lg-7">
 					<div class="card">
 						<div class="card-header">
-							<strong>Data</strong><small> Desa</small>
+							<strong>Data</strong><small> Kelurahan</small>
 						</div>
 						<div class="card-body">
-							<table class="table table-striped" id="table">
+							<table id="example" style="width:100%">
 								<thead>
 									<tr>
-										<td>Nama Kecamatan</td>
-										<td>Nama Desa</td>
-										<td>Aksi</td>
-									</tr>									
+										<th>Nama Kecamatan</th>
+										<th>Nama Kelurahan</th>
+										<th>Aksi</th>
+									</tr>
 								</thead>
 								<tbody>
 									<?php foreach ($desa as $value): ?>
@@ -61,8 +60,16 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
+
+			
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+</script>
 <?php $this->load->view('footer'); ?>

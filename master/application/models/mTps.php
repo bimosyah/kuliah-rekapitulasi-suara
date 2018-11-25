@@ -15,9 +15,10 @@ class MTps extends CI_Model {
 
 	public function getJoin()
 	{
-		$this->db->select('tps.id,nama_tps, desa.nama_desa,jml_dpt');
+		$this->db->select('tps.id,nama_tps, desa.nama_desa,jml_dpt,kecamatan.nama_kecamatan,lokasi');
 		$this->db->from('tps');
 		$this->db->join('desa', 'tps.fk_id_desa = desa.id');
+		$this->db->join('kecamatan', 'desa.fk_id_kecamatan = kecamatan.id');
 		return $this->db->get()->result();
 	}
 

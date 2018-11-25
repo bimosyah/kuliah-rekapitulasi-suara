@@ -9,6 +9,7 @@ class Petugas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('mDesa');
+		$this->load->model('mKecamatan');
 		$this->load->model('mPetugas');
 		$this->load->model('mLogin');
 		$this->load->library('PasswordGenerator');
@@ -16,6 +17,7 @@ class Petugas extends CI_Controller {
 
 	public function index()
 	{
+		$data['kecamatan'] = $this->mKecamatan->getAll();
 		$data['title'] = $this->title;
 		$data['petugas'] = $this->mPetugas->getJoin();
 		$data['desa'] = $this->mDesa->getAll();
@@ -42,6 +44,7 @@ class Petugas extends CI_Controller {
 	{
 		$delete = $this->mPetugas->delete($id);
 		if ($delete) {
+			$this->mLogin->delete($id);
 			$this->session->set_flashdata('msg', $this->load_message('primary', 'Data sukses terhapus'));	
 		} else {
 			$this->session->set_flashdata('msg', $this->load_message('danger', 'Data gagal terhapus'));	
@@ -99,6 +102,30 @@ class Petugas extends CI_Controller {
 		}
 		redirect('Petugas','refresh');
 	}
+
+	// public function input_petugas()
+	// {
+	// 	$array ='';
+	// 	$file_path = './assets/list.txt';
+	// 	$fp = @fopen($file_path, 'r'); 
+	// 	if ($fp) {
+	// 		$array = explode("\n", fread($fp, filesize($file_path)));
+	// 	}
+	// 	$a = 8;
+	// 	$insert_array = array();
+		// for ($i = 0; $i <= 53; $i++) {
+			
+		// 	$data = array(
+		// 		'fk_id_desa' => $a,
+		// 		'nama_petugas' => $array[$i],
+		// 		'status_login' => 1
+		// 	);
+		// 	$a++;
+		// 	$this->db->insert('petugas', $data);
+		// 	//array_push($insert_array, $data);
+		// }
+
+	// }
 }
 
 /* End of file Desa.php */
